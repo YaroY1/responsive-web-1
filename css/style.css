@@ -3,13 +3,16 @@
 	margin: 0;
 	padding: 0;
 }
+html {
+	scroll-behavior: smooth;
+}
 body {
 	font-family: "Open Sans", sans-serif;
 }
 .wrapper {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1300px;
+	max-width: 1200px;
 }
 .hero-bg {
 	position: absolute;
@@ -39,12 +42,18 @@ body {
 	text-transform: uppercase;
 	text-align: center;
 }
+section {
+	scroll-margin-top: 70px;
+}
 /*NAWIGACJA*/
 nav {
+	position: sticky;
+	top: 0;
 	height: 60px;
 	line-height: 60px;
 	background-color: #ddd;
 	text-align: center;
+	z-index: 10;
 }
 .burger-icon {
 	line-height: 60px;
@@ -75,8 +84,9 @@ main {
 	margin: 40px 0;
 }
 /*main > about-us*/
-.about-us {
+.about-us-info {
 	margin-bottom: 10px;
+	padding: 0 20px;
 }
 /*main > produkty*/
 .products {
@@ -84,38 +94,45 @@ main {
 }
 .product h3 {
 	text-transform: uppercase;
+	transition: 0.3s;
+}
+.product:hover h3 {
+	transform: scale(1.3);
+}
+.product {
+	position: relative;
+	height: 300px;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
 }
 .first-product {
-	position: relative;
-	height: 300px;
 	background-image: url(../img/children-593313_640_small.jpg);
-	background-size: cover;
-	background-position: center;
-	text-align: center;
 }
 .second-product {
-	position: relative;
-	height: 300px;
 	background-image: url(../img/keyboard-70506_640_small.jpg);
-	background-size: cover;
-	background-position: center;
-	text-align: center;
 }
 .third-product {
-	position: relative;
-	height: 300px;
 	background-image: url(../img/woman-1851464_640_small.jpg);
-	background-size: cover;
-	background-position: center;
-	text-align: center;
 }
 .fourth-product {
-	position: relative;
-	height: 300px;
 	background-image: url(../img/laptop-1483974_640_small.jpg);
-	background-size: cover;
-	background-position: center;
+}
+
+/*main > kontakt*/
+
+.contact {
 	text-align: center;
+}
+.contact h3 {
+	margin: 20px 0 5px 0;
+}
+/*FOOTER*/
+footer {
+	padding: 30px 10px;
+	text-align: center;
+	background-color: #333;
+	color: #ddd;
 }
 
 @media (min-width: 768px) {
@@ -145,6 +162,30 @@ main {
 	}
 	.hero-text p {
 		font-size: 18px;
+	}
+	.product h3 {
+		font-size: 24px;
+	}
+	/* .first-product {
+		background-image: url(../img/children-593313_1920.jpg);
+	}
+	.second-product {
+		background-image: url(../img/keyboard-70506_1920.jpg);
+	}
+	.third-product {
+		background-image: url(../img/woman-1851464_1920.jpg);
+	}
+	.fourth-product {
+		background-image: url(../img/laptop-1483974_1920.jpg);
+	} */
+}
+@media (min-width: 992px) {
+	.product {
+		display: inline-block;
+		width: 50%;
+	}
+	.products-box {
+		font-size: 0;
 	}
 }
 @media (min-width: 1200px) {
